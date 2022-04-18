@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <string.h>
 
 int main_memory = 45;
 
 struct Jobs {
   int priority;
-  char title[10];
+  char title[20];
 };
 
   struct Jobs job;
@@ -13,10 +14,17 @@ struct Jobs {
 //   incoming job. Create a struct with all job information and linked list pointer
 
 void incoming_job(char job_info) {
-
+  
   struct Jobs job1;
+  job1.priority = 1;
+  strcpy( job1.title, 'cry myself to sleep' );
+
+  printf("job1 pri: %i\n",job1.priority);
   
 }
+
+
+
 
 
 // TODO Hold Queue 1 --> sorted linked list based on SHORTEST JOB FIRST
@@ -38,6 +46,6 @@ void incoming_job(char job_info) {
 
 
 int main(void) {
-  printf("Hello World\n");
+  incoming_job("Hello World\n");
   return 0;
 }
