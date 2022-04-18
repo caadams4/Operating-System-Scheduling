@@ -5,31 +5,41 @@ int main_memory = 45;
 
 struct Jobs {
   int priority;
-  char title[20];
+  char title;
 };
 
-  struct Jobs job;
+
+// TODO Hold Queue 1 --> sorted linked list based on SHORTEST JOB FIRST
+void send_2_hold_q_1(struct Jobs job) {
+  puts("Recieved job, placing into queue SJF");
+  
+}
+
+// TODO Hold Queue 2 --> linked list based on FIRST IN FIRST OUT
+void send_2_hold_q_2(struct Jobs job) {
+  puts("Recieved job, placing into queue FIFO");
+  
+}
 
 // TODO Submit Queue --> incoming_job() {}
 //   incoming job. Create a struct with all job information and linked list pointer
 
 void incoming_job(char job_info) {
   
-  struct Jobs job1;
-  job1.priority = 1;
-  strcpy( job1.title, 'cry myself to sleep' );
+  struct Jobs new_job;
+  new_job.priority = 1;
+  new_job.title = 'c';
 
-  printf("job1 pri: %i\n",job1.priority);
-  
+  printf("job1 pri: %i\njob1 title: %c\n",new_job.priority,new_job.title);
+
+  switch (new_job.priority){
+      case 1:
+        send_2_hold_q_1(new_job);
+      case 2: 
+        send_2_hold_q_2(new_job);
+    }
 }
 
-
-
-
-
-// TODO Hold Queue 1 --> sorted linked list based on SHORTEST JOB FIRST
-
-// TODO Hold Queue 2 --> linked list based on FIRST IN FIRST OUT
 
 // TODO Job Scheduling --> schedule_job() {}
 
